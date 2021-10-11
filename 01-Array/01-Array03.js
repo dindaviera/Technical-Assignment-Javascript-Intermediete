@@ -4,8 +4,8 @@ const arr = [
   [2, 8],
 ];
 
-function searchInArray(data, number) {
-  let newData = [].concat(...data);
+function searchInArray(input, number) {
+  let newData = [].concat(...input);
   for(let i = 0; i < newData.length; i++) {
     if(newData[i] == number)
     return i;
