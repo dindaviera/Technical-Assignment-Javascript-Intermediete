@@ -16,7 +16,31 @@
         submit
     </button>
     <script>
-      /// EDIT DOWN HERE
+      let regexPsw = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})")
+        let regexEmail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+        let emailJS = document.getElementById("email")
+        let pswJS = document.getElementById("password")
+        let btnsubmit = document.getElementById("btn-submit")
+
+        btnsubmit.addEventListener("click", function (e) {
+            e.preventDefault()
+
+            let inputEmail = emailJS.value;
+            let inputPassword = pswJS.value;
+
+            let hasil = regexEmail.test(inputEmail)
+            if (hasil) {
+                hasil = regexPsw.test(inputPassword)
+                if (hasil) {
+                    alert("Welcome to The Jungle")
+                } else {
+                    alert("tolong masukkan password yang valid")
+                }
+
+            } else {
+                alert("tolong masukkan email yang valid")
+            }
+        })
     </script>
 </body>
 
